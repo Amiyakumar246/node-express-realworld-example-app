@@ -1,1 +1,21 @@
 
+version: 0.2
+
+env:
+   parameter-store:
+           DB_USER: "/amiya/DB_USER"
+           DB_PASSWORD: "/amiya/DB_PASSWORD"
+           DB_HOST: "/amiya/DB_HOST"
+           DB_NAME: "/amiya/DB_NAME"
+
+phases:
+   build:
+        commands:
+            - sed -i 's/database_name_here/'$DB_NAME'/' wp-config.php
+            - sed -i 's/username_here/'$DB_USER'/' wp-config.php
+            - sed -i 's/password_here/'$DB_PASSWORD'/' wp-config.php
+            - sed -i 's/localhost/'$DB_HOST'/' wp-config.php
+
+artifacts:
+        files:
+            - '**/*'
