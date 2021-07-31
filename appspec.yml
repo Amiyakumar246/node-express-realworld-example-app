@@ -2,9 +2,8 @@ version: 0.0
 os: linux
 files:
     - source: /
-      destination: /etc/nodejs
+      destination: /home/ubuntu/node-express-realworld-example-app/
       
-
 hooks:
   ApplicationStart:
     - location: start_server.sh
