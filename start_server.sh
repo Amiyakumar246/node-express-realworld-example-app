@@ -1,3 +1,4 @@
 #!/bin/bash
-cd /home/ubuntu/node-express-realworld-example-app/
-pm2 start app.js -f
+cd /root/backend
+npm install
+pm2 start --name backend npm -- start
